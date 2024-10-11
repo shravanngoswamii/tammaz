@@ -1,0 +1,19 @@
+---
+pagetitle: "Tammaz"
+navbar: false
+page-layout: custom
+css: assets/styles/style.css
+listing:
+  id: featured-products
+  template: assets/products.ejs
+  contents: products.yml
+---
+
+{{< include _includes/header.qmd >}}
+
+{{< include _includes/intro.qmd >}}
+
+::: {#featured-products}
+:::
+
+{{< include _includes/footer.qmd >}}

@@ -1,0 +1,22 @@
+```{=html}
+<section class="products" id="products">
+    <div class="container">
+        <div class="products-content">
+            <h2>Featured Products</h2>
+            <div class="product-grid">
+                <% for (const item of items) { %>
+                <% for (const product of item.products) { %>
+                <div class="product">
+                    <img src="<%- product.images[0] %>" alt="<%- product.name %>">
+                    <div class="product-info">
+                        <h3 class="product-name"><%- product.name %></h3>
+                        <p class="product-price">₹<%- product.price %></p>
+                    </div>
+                </div>
+                <% } %>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</section>
+```

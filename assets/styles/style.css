@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+}
+
+header {
+    background-image: url('../images/yellow.png');
+    background-size: cover;
+    background-position: center;
+    padding: 1.5rem 0;
+    position: relative;
+    background-repeat: repeat;
+}
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+
+.header-content {
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: #4a0e78;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    text-align: center;
+}
+
+.intro {
+    text-align: center;
+    padding: 5rem 0;
+    background-image: url('../images/yellow.png');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.intro::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.intro-content {
+    position: relative;
+    z-index: 1;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #4a0e78;
+}
+
+.intro p {
+    font-size: 1.1rem;
+    color: #333;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #4a0e78;
+    color: #fff;
+    padding: 0.8rem 2rem;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #3a0b5e;
+    transform: translateY(-2px);
+}
+
+.quarto-listing {
+    padding-top: 0 !important;
+    padding-bottom: 0;
+    margin-top: 0;
+}
+
+.products {
+    padding: 5rem 0;
+    padding-top: 0px;
+    background-image: url('../images/yellow.png');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.products::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.products-content {
+    position: relative;
+    z-index: 1;
+}
+
+.products h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    margin-top: 0;
+    padding-top: 10px;
+    color: #4a0e78;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.product {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.product img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.product-info {
+    padding: 1rem;
+}
+
+.product-name {
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    margin-top: 0;
+}
+
+.product-price {
+    text-align: center;
+    font-weight: 600;
+    color: #4a0e78;
+    margin-bottom: 0;
+}
+
+.site-footer {
+    background-image: url('../images/yellow.png');
+    background-size: cover;
+    background-position: center;
+    color: #333;
+    text-align: center;
+    padding: 2rem 0 !important;
+    position: relative;
+}
+
+.site-footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.site-footer p {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width: 991.98px) {
+#quarto-content > * {
+    padding-top: 14px;
+}
+.quarto-listing {
+    padding-top: 0 !important;
+}
+}
+@media (max-width: 991.98px) {
+  #quarto-content section:first-of-type h2:first-of-type, #quarto-content section:first-of-type .h2:first-of-type {
+    margin-top: 0rem;
+  }
+}
