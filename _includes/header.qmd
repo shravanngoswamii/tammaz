@@ -2,7 +2,7 @@
 <header>
     <div class="container">
         <div class="header-content">
-            <a href="./" class="logo">Tammaz</a>
+            <a href="./" class="logo">Govind</a>
         </div>
     </div>
 </header>
