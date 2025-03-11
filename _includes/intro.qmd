@@ -4,7 +4,7 @@
         <div class="intro-content">
             <h1>just for YOU</h1>
             <p>Discover our curated collection of sophisticated and stylish clothing, designed to elevate your wardrobe and express your unique personality.</p>
-            <a href="#products" class="cta-button">Explore Collection</a>
+            <a href="/#products" class="cta-button">Explore Collection</a>
         </div>
     </div>
 </section>

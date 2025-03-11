@@ -1,56 +1,27 @@
 products:
-  - name: "Kanjivaram Silk Saree"
-    price: "149.99"
-    description: "A stunning Kanjivaram silk saree, renowned for its rich colors and intricate zari work. Perfect for weddings and special occasions."
-    images: 
-      - "https://www.studio149fashion.com/cdn/shop/files/ATHUL-1-1.jpg?v=1714812817&width=600"
-      - "https://www.studio149fashion.com/cdn/shop/files/ATHUL-1-2.jpg?v=1714812817&width=600"
-      - "https://www.studio149fashion.com/cdn/shop/files/ATHUL-1-3.jpg?v=1714812817&width=600"
+  - name: "Tissue 2 tone Saree"
+    price: "2500"
+    discounted_price: "1299"   # Optional: if provided, JS computes discount percent.
+    discount_percent: ""            # Alternatively, set e.g. "10" for 
+    payment_options: "COD, Google Pay, UPI"
+    sizes: "Free Size"
+    description: "Beautiful Art Silk Golden handwork lace with simmri Tissue Golden Saree"
+    images: "2TON1.jpg, ton3.jpg, ton4.jpg, ton5.jpg"
 
-  - name: "Banarasi Brocade Saree"
-    price: "139.99"
-    description: "Elegant Banarasi brocade saree with elaborate motifs and a luxurious feel. A perfect choice for festive celebrations."
-    images:
-      - "https://www.studio149fashion.com/cdn/shop/files/ATHUL-1-1.jpg?v=1714812817&width=600"
-      - "https://www.studio149fashion.com/cdn/shop/files/ATHUL-1-2.jpg?v=1714812817&width=600"
-      - "https://www.studio149fashion.com/cdn/shop/files/ATHUL-1-3.jpg?v=1714812817&width=600"
+  - name: "Red Flower Saree"
+    price: "2500"
+    discounted_price: "999"   # Optional: if provided, JS computes discount percent.
+    discount_percent: ""            # Alternatively, set e.g. "10" for 
+    payment_options: "COD, Google Pay, UPI"
+    sizes: "Free Size"
+    description: "Beautiful Red Flower Georgette Saree with Serosaki Work  "
+    images: "redflower1.jpg, redflower2.jpg, redflower3.jpg, redflower4.jpg, redflower5.jpg, redflower6.jpg"
 
-  - name: "Chiffon Printed Saree"
-    price: "69.99"
-    description: "Lightweight chiffon saree with vibrant prints, ideal for summer outings. Easy to drape and comfortable to wear."
-    images:
-      - "https://www.studio149fashion.com/cdn/shop/files/ATHUL-1-1.jpg?v=1714812817&width=600"
-      - "https://www.studio149fashion.com/cdn/shop/files/ATHUL-1-2.jpg?v=1714812817&width=600"
-      - "https://www.studio149fashion.com/cdn/shop/files/ATHUL-1-3.jpg?v=1714812817&width=600"
-
-  - name: "Georgette Embroidered Saree"
-    price: "89.99"
-    description: "Beautiful georgette saree featuring intricate embroidery. Perfect for evening events and parties."
-    images:
-      - "https://www.studio149fashion.com/cdn/shop/files/ATHUL-1-1.jpg?v=1714812817&width=600"
-      - "https://www.studio149fashion.com/cdn/shop/files/ATHUL-1-2.jpg?v=1714812817&width=600"
-      - "https://www.studio149fashion.com/cdn/shop/files/ATHUL-1-3.jpg?v=1714812817&width=600"
-
-  - name: "Cotton Handloom Saree"
-    price: "49.99"
-    description: "Soft and breathable handloom cotton saree, perfect for daily wear. A blend of comfort and traditional elegance."
-    images:
-      - "https://www.studio149fashion.com/cdn/shop/files/ATHUL-1-1.jpg?v=1714812817&width=600"
-      - "https://www.studio149fashion.com/cdn/shop/files/ATHUL-1-2.jpg?v=1714812817&width=600"
-      - "https://www.studio149fashion.com/cdn/shop/files/ATHUL-1-3.jpg?v=1714812817&width=600"
-
-  - name: "Net Lace Saree"
-    price: "99.99"
-    description: "Stylish net lace saree adorned with delicate lace work. Ideal for cocktail parties and evening gatherings."
-    images:
-      - "https://www.studio149fashion.com/cdn/shop/files/ATHUL-1-1.jpg?v=1714812817&width=600"
-      - "https://www.studio149fashion.com/cdn/shop/files/ATHUL-1-2.jpg?v=1714812817&width=600"
-      - "https://www.studio149fashion.com/cdn/shop/files/ATHUL-1-3.jpg?v=1714812817&width=600"
-
-  - name: "Satin Saree with Sequin Work"
-    price: "119.99"
-    description: "Luxurious satin saree embellished with sequins for a glamorous look. Perfect for festive occasions and celebrations."
-    images:
-      - "https://www.studio149fashion.com/cdn/shop/files/ATHUL-1-1.jpg?v=1714812817&width=600"
-      - "https://www.studio149fashion.com/cdn/shop/files/ATHUL-1-2.jpg?v=1714812817&width=600"
-      - "https://www.studio149fashion.com/cdn/shop/files/ATHUL-1-3.jpg?v=1714812817&width=600"
+  - name: "Wine Flower Saree"
+    price: "2500"
+    discounted_price: "999"   # Optional: if provided, JS computes discount percent.
+    discount_percent: ""            # Alternatively, set e.g. "10" for 
+    payment_options: "COD, Google Pay, UPI"
+    sizes: "Free Size"
+    description: "Beautiful Wine  Flower Georgette Saree with Serosaki Work  "
+    images: "wineflower1.jpg, wineflower2.jpg, wineflower3.jpg, wineflower4.jpg, wineflower5.jpg, wineflower6.jpg"

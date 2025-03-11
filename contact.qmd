@@ -1,5 +1,25 @@
 ---
-title: "Contact"
+pagetitle: "Contact - Tammaz"
+navbar: false
+page-layout: custom
+css: assets/styles/style.css
 ---
 
-Contact Us
+{{< include _includes/header.qmd >}}
+
+{{< include _includes/intro.qmd >}}
+
+```{=html}
+<section class="contact" style="padding: 2rem 0; text-align: center; background-image: url('../images/yellow.png'); background-size: cover; background-position: center; position: relative;">
+  <!-- Optional overlay for softer background -->
+  <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(255,255,255,0.7);"></div>
+  <div class="container" style="position: relative; z-index: 1;">
+    <h1 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; color: #4a0e78; margin-bottom: 1rem;">Contact Us</h1>
+    <p style="font-size: 1.1rem; color: #333; margin-bottom: 1rem;">We'd love to hear from you! Reach out via mobile or email:</p>
+    <div class="contact-info" style="font-size: 1.2rem; color: #4a0e78;">
+      <p><strong>Mobile:</strong> <a href="tel:+91xxxxxxxxxx" style="color: inherit; text-decoration: none;">+91 xxxxxxxxxx</a></p>
+      <p><strong>Email:</strong> <a href="mailto:mail@gmail.com" style="color: inherit; text-decoration: none;">mail@gmail.com</a></p>
+    </div>
+  </div>
+</section>
+```

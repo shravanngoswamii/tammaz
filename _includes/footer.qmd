@@ -1,7 +1,7 @@
 ```{=html}
 <footer class="site-footer">
     <div class="container">
-        <p>&copy; 2024 Tammaz. All rights reserved.</p>
+        <p>&copy; 2025 Tammaz. All rights reserved.</p>
     </div>
 </footer>
 ```

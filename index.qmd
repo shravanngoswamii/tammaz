@@ -3,6 +3,7 @@ pagetitle: "Tammaz"
 navbar: false
 page-layout: custom
 css: assets/styles/style.css
+resources: assets/products/
 listing:
   id: featured-products
   template: assets/products.ejs
@@ -17,3 +18,221 @@ listing:
 :::
 
 {{< include _includes/footer.qmd >}}
+
+```{=html}
+<!-- Product Details Modal (hidden by default) -->
+<div id="productModal" class="modal" style="display: none;">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <!-- Image container (on top) -->
+    <div class="modal-image-container">
+      <div class="slideshow">
+        <button class="prev">&lt;</button>
+        <div class="product-gallery">
+          <!-- Current image will be inserted here dynamically -->
+        </div>
+        <button class="next">&gt;</button>
+      </div>
+    </div>
+    <!-- Text container (below the image) -->
+    <div class="modal-text-container">
+      <h2 id="modalProductName"></h2>
+      <p id="modalProductDescription"></p>
+      <p id="modalProductSizes"></p>
+      <p id="modalPrices"></p>
+      <p id="modalPaymentOptions"></p>
+      <button id="buyNowButton">Buy Now</button>
+    </div>
+  </div>
+</div>
+
+<!-- Order Form Modal (hidden by default) -->
+<div id="orderModal" class="modal" style="display: none;">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Order Details</h2>
+    <form id="orderForm">
+      <label for="whatsappNumber">WhatsApp Number:</label>
+      <input type="text" id="whatsappNumber" name="whatsappNumber" required>
+      
+      <label for="address">Address:</label>
+      <textarea id="address" name="address" required></textarea>
+      
+      <!-- New Size Field -->
+      <label for="size">Size:</label>
+      <input type="text" id="size" name="size" placeholder="Enter desired size" required>
+      
+      <!-- New Quantity Field -->
+      <label for="quantity">Quantity:</label>
+      <input type="number" id="quantity" name="quantity" min="1" value="1" required>
+      
+      <label for="paymentOption">Payment Option:</label>
+      <select id="paymentOption" name="paymentOption">
+        <option value="COD">Cash on Delivery (COD)</option>
+        <option value="GooglePay">Google Pay</option>
+        <option value="UPI">UPI</option>
+      </select>
+      
+      <button type="submit">Buy</button>
+    </form>
+  </div>
+</div>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const productModal = document.getElementById('productModal');
+  const orderModal = document.getElementById('orderModal');
+  let slideshowInterval = null;
+  let currentImages = [];
+  let currentIndex = 0;
+  
+  // Close modal when clicking on any .close element
+  document.querySelectorAll('.modal .close').forEach(btn => {
+    btn.onclick = function() {
+      const modal = this.closest('.modal');
+      modal.style.display = 'none';
+      if (modal.id === 'productModal' && slideshowInterval) {
+        clearInterval(slideshowInterval);
+      }
+    }
+  });
+  
+  // Close modal when clicking outside the modal-content
+  window.onclick = function(event) {
+    if (event.target.classList.contains('modal')) {
+      event.target.style.display = 'none';
+      if (event.target.id === 'productModal' && slideshowInterval) {
+        clearInterval(slideshowInterval);
+      }
+    }
+  };
+  
+  function updateSlideshow() {
+    const gallery = document.querySelector('#productModal .product-gallery');
+    gallery.innerHTML = '';
+    if (currentImages.length > 0) {
+      const img = document.createElement('img');
+      img.src = currentImages[currentIndex];
+      img.style.maxWidth = '100%';
+      img.style.height = 'auto';
+      gallery.appendChild(img);
+    }
+  }
+  
+  function autoSlide() {
+    if (currentImages.length > 1) {
+      currentIndex = (currentIndex + 1) % currentImages.length;
+      updateSlideshow();
+    }
+  }
+  
+  // Previous slide button
+  document.querySelector('.slideshow .prev').addEventListener('click', function() {
+    if (currentImages.length > 1) {
+      currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
+      updateSlideshow();
+    }
+  });
+  
+  // Next slide button
+  document.querySelector('.slideshow .next').addEventListener('click', function() {
+    if (currentImages.length > 1) {
+      currentIndex = (currentIndex + 1) % currentImages.length;
+      updateSlideshow();
+    }
+  });
+  
+  // Product click handler
+  document.addEventListener('click', function(e) {
+    const productElement = e.target.closest('.product');
+    if (productElement) {
+      const name = productElement.getAttribute('data-name');
+      const price = productElement.getAttribute('data-price');
+      const discountedPrice = productElement.getAttribute('data-discounted-price');
+      const discountPercent = productElement.getAttribute('data-discount-percent');
+      const paymentOptions = productElement.getAttribute('data-payment-options');
+      const sizes = productElement.getAttribute('data-sizes');
+      const description = productElement.getAttribute('data-description');
+      const imagesData = productElement.getAttribute('data-images');
+      
+      // Reset current state
+      currentIndex = 0;
+      currentImages = imagesData.split(',').map(url => "assets/products/" + url.trim());
+
+      // Update modal content
+      document.getElementById('modalProductName').textContent = name;
+      document.getElementById('modalProductDescription').textContent = description;
+      document.getElementById('modalProductSizes').textContent = "Available Sizes: " + sizes;
+      
+      // Calculate and display prices
+      let priceValue = parseFloat(price);
+      let discountedPriceValue, discountPercentValue;
+      
+      if (discountedPrice && discountedPrice.trim() !== "") {
+        discountedPriceValue = parseFloat(discountedPrice);
+        discountPercentValue = Math.round((1 - (discountedPriceValue / priceValue)) * 100);
+      } else if (discountPercent && discountPercent.trim() !== "") {
+        discountPercentValue = parseFloat(discountPercent);
+        discountedPriceValue = priceValue * (1 - discountPercentValue / 100);
+        discountedPriceValue = parseFloat(discountedPriceValue.toFixed(2));
+      } else {
+        discountedPriceValue = priceValue;
+        discountPercentValue = 0;
+      }
+      
+      if (discountPercentValue > 0) {
+        document.getElementById('modalPrices').innerHTML =
+          '<span class="original-price">₹' + priceValue.toFixed(2) + '</span> ' +
+          '<span class="discounted-price">₹' + discountedPriceValue.toFixed(2) + '</span> ' +
+          '<span class="discount-percent">(' + discountPercentValue + '% off)</span>';
+      } else {
+        document.getElementById('modalPrices').innerHTML =
+          '<span class="discounted-price">₹' + priceValue.toFixed(2) + '</span>';
+      }
+      
+      document.getElementById('modalPaymentOptions').textContent = "Payment Options: " + paymentOptions;
+      
+      // Update slideshow and start auto-rotation
+      updateSlideshow();
+      if (slideshowInterval) clearInterval(slideshowInterval);
+      if (currentImages.length > 1) {
+        slideshowInterval = setInterval(autoSlide, 3000);
+      }
+      
+      // Show the modal
+      productModal.style.display = 'block';
+    }
+  });
+  
+  document.getElementById('buyNowButton').addEventListener('click', function() {
+    if (slideshowInterval) clearInterval(slideshowInterval);
+    productModal.style.display = 'none';
+    orderModal.style.display = 'block';
+  });
+  
+  document.getElementById('orderForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const whatsappNumber = document.getElementById('whatsappNumber').value;
+    const address = document.getElementById('address').value;
+    const size = document.getElementById('size').value;  // Capture the size input
+    const quantity = document.getElementById('quantity').value;
+    const paymentOption = document.getElementById('paymentOption').value;
+    const productName = document.getElementById('modalProductName').textContent;
+    
+    let message = 'Hi, I\'m interested in buying ' + productName + '.%0A';
+    message += 'WhatsApp Number: ' + whatsappNumber + '%0A';
+    message += 'Address: ' + address + '%0A';
+    message += 'Size: ' + size + '%0A';              // Include size in the message
+    message += 'Quantity: ' + quantity + '%0A';
+    message += 'Payment Option: ' + paymentOption;
+    
+    const businessNumber = "+917043755801";
+    const whatsappUrl = 'https://api.whatsapp.com/send?phone=' + businessNumber + '&text=' + message;
+    window.open(whatsappUrl, '_blank');
+    orderModal.style.display = 'none';
+  });
+});
+</script>
+```
+
