@@ -1,245 +1,445 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap');
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
-    color: #333;
-    line-height: 1.6;
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  line-height: 1.6;
 }
 
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-    position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
 }
 
+/* Header styling */
 header {
-    background-image: url('../images/yellow.png');
-    background-size: cover;
-    background-position: center;
-    padding: 1.5rem 0;
-    position: relative;
-    background-repeat: repeat;
-}
-header::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(255, 255, 255, 0.7);
+  background-image: url('../images/texture.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 1.5rem 0;
+  position: relative;
+  background-repeat: repeat;
 }
 
+header::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(255, 255, 255, 0.3);
+}
 
 .header-content {
-    display: flex;
-    justify-content:center;
-    align-items: center;
-    position: relative;
-    z-index: 1;
-    text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  text-align: center;
 }
 
 .logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.5rem;
-    color: #4a0e78;
-    text-decoration: none;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-    text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  color: #4a0e78;
+  text-decoration: none;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
+/* Intro Section */
 .intro {
-    text-align: center;
-    padding: 5rem 0;
-    background-image: url('../images/yellow.png');
-    background-size: cover;
-    background-position: center;
-    position: relative;
+  text-align: center;
+  padding: 1.5rem 0;
+  background-image: url('../images/texture.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
 }
 
 .intro::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(255, 255, 255, 0.7);
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
 .intro-content {
-    position: relative;
-    z-index: 1;
+  position: relative;
+  z-index: 1;
 }
 
 h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    color: #4a0e78;
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #4a0e78;
+}
+
+.intro-content h1 {
+  margin-top: 0rem !important;
 }
 
 .intro p {
-    font-size: 1.1rem;
-    color: #333;
-    max-width: 600px;
-    margin: 0 auto 2rem;
+  font-size: 1.1rem;
+  color: #333;
+  max-width: 600px;
+  margin: 0 auto 2rem;
 }
 
 .cta-button {
-    display: inline-block;
-    background-color: #4a0e78;
-    color: #fff;
-    padding: 0.8rem 2rem;
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+  background-color: #4a0e78;
+  color: #fff;
+  padding: 0.8rem 2rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .cta-button:hover {
-    background-color: #3a0b5e;
-    transform: translateY(-2px);
+  background-color: #3a0b5e;
+  transform: translateY(-2px);
 }
 
-.quarto-listing {
-    padding-top: 0 !important;
-    padding-bottom: 0;
-    margin-top: 0;
-}
-
+/* Product Grid */
 .products {
-    padding: 5rem 0;
-    padding-top: 0px;
-    background-image: url('../images/yellow.png');
-    background-size: cover;
-    background-position: center;
-    position: relative;
+  padding: 1.5rem 0;
+  background-image: url('../images/texture.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
 }
 
 .products::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(255, 255, 255, 0.8);
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
 .products-content {
-    position: relative;
-    z-index: 1;
+  position: relative;
+  z-index: 1;
+}
+
+.products-content h2 {
+  margin-top: 0rem !important;
 }
 
 .products h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.5rem;
-    text-align: center;
-    margin-bottom: 3rem;
-    margin-top: 0;
-    padding-top: 10px;
-    color: #4a0e78;
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #4a0e78;
 }
 
 .product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
 }
 
 .product {
-    background-color: rgba(255, 255, 255, 0.9);
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
 }
 
 .product:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .product img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  padding: 0.5rem;
 }
 
 .product-info {
-    padding: 1rem;
+  padding: 1rem;
+  text-align: center;
+}
+
+.product-info h3 {
+  margin-top: 0 !important;
+}
+
+.product-info p {
+  margin-bottom: 0 !important;
 }
 
 .product-name {
-    text-align: center;
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-    margin-top: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
 }
 
 .product-price {
-    text-align: center;
-    font-weight: 600;
-    color: #4a0e78;
-    margin-bottom: 0;
+  font-weight: 600;
+  color: #4a0e78;
 }
 
+/* Footer */
 .site-footer {
-    background-image: url('../images/yellow.png');
-    background-size: cover;
-    background-position: center;
-    color: #333;
-    text-align: center;
-    padding: 2rem 0 !important;
-    position: relative;
+  background-image: url('../images/texture.jpg');
+  background-size: cover;
+  background-position: center;
+  color: #333;
+  text-align: center;
+  padding: 1.5rem 0 !important;
+  position: relative;
 }
 
 .site-footer::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(255, 255, 255, 0.7);
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
 .site-footer p {
-    position: relative;
-    z-index: 1;
-    margin-bottom: 0;
+  position: relative;
+  z-index: 1;
+  margin: 0 auto;
 }
 
+/* Remove extra padding around the listing */
+#listing-featured-products {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Updated Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 2% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 90%;
+  max-width: 1000px;
+  position: relative;
+  border-radius: 10px;
+}
+
+/* Product Modal Layout */
+#productModal .modal-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-image-container {
+  height: 100%;
+}
+
+.slideshow {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  position: relative;
+}
+
+.slideshow button.prev,
+.slideshow button.next {
+  background: #4a0e78;
+  color: #fff;
+  border: none;
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.slideshow .product-gallery {
+  flex: 1;
+  height: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slideshow .product-gallery img {
+  max-width: 100%;
+  max-height: 450px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  /* Added fade-in animation for slideshow images */
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal-text-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+#modalProductName {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: #4a0e78;
+  margin: 0;
+}
+
+#modalPrices {
+  font-size: 1.4rem;
+  margin: 0.5rem 0;
+}
+
+.original-price {
+  text-decoration: line-through;
+  color: #888;
+  margin-right: 0.5rem;
+}
+
+.discounted-price {
+  font-weight: bold;
+  color: #e53935;
+  margin-right: 0.5rem;
+}
+
+.discount-percent {
+  color: #388e3c;
+}
+
+#buyNowButton {
+  background-color: #4a0e78;
+  color: #fff;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: auto;
+  width: 100%;
+}
+
+#buyNowButton:hover {
+  background-color: #3a0b5e;
+}
+
+/* Order Form Modal */
+#orderModal .modal-content {
+  max-width: 500px;
+}
+
+#orderForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#orderForm label {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+#orderForm input,
+#orderForm textarea,
+#orderForm select {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+/* Order Modal Buy Button (same style as product modal) */
+#orderModal button[type="submit"] {
+  background-color: #4a0e78;
+  color: #fff;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: auto;
+  width: 100%;
+}
+
+#orderModal button[type="submit"]:hover {
+  background-color: #3a0b5e;
+}
+
+/* Close Button */
+.modal .close {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #aaa;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.modal .close:hover {
+  color: #000;
+}
+
+/* Responsive Adjustments */
 @media (max-width: 768px) {
-    h1 {
-        font-size: 2.5rem;
-    }
+  #productModal .modal-content {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
 
-    .product-grid {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    }
-}
+  .slideshow .product-gallery {
+    height: 300px;
+  }
 
-@media (max-width: 991.98px) {
-#quarto-content > * {
-    padding-top: 14px;
-}
-.quarto-listing {
-    padding-top: 0 !important;
-}
-}
-@media (max-width: 991.98px) {
-  #quarto-content section:first-of-type h2:first-of-type, #quarto-content section:first-of-type .h2:first-of-type {
-    margin-top: 0rem;
+  .slideshow .product-gallery img {
+    max-height: 300px;
+  }
+
+  .modal-text-container {
+    padding: 0;
+  }
+
+  #modalProductName {
+    font-size: 1.5rem;
   }
 }
